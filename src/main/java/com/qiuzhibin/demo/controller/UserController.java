@@ -27,7 +27,7 @@ public class UserController {
     }
 
 
-    //   验证用户登录
+    // 用户登录
     @RequestMapping(value = "/login.do", method = RequestMethod.POST)
     public String login(UserVo userVo, HttpServletRequest request, RedirectAttributes redirectAttributes) {
         request.getSession().setAttribute("title", "login");
@@ -42,14 +42,14 @@ public class UserController {
         return "redirect:/showMain.do";
     }
 
-
+//  用户登出
     @RequestMapping(value = "/logout.do", method = RequestMethod.GET)
     public String logout(HttpServletRequest request, RedirectAttributes redirectAttr) {
         request.getSession().setAttribute("user", null);
         return "redirect:/showMain.do";
     }
 
-
+ //用户注册
     @RequestMapping(value = "/register.do", method = RequestMethod.POST)
     public String register(UserVo user,HttpServletRequest request, RedirectAttributes redirectAttr) {
         if(!userService.insertUser(user)){

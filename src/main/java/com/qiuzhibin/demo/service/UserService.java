@@ -28,8 +28,15 @@ public class UserService implements IUserService{
 
     @Override
     public boolean insertUser(UserVo user) {
-        return userMapper.insertUser(user.getUsername(),user.getPassword());
+        if(checkvalid(user)){
+        int flag = userMapper.insertUser(user.getUsername(),user.getPassword());
+        return flag == 1;}else{
+            return false;
+        }
             }
 
-
+    public boolean checkvalid(UserVo user){
+        List<User> users = userMapper.selectUserByUsernameAndPassword(user.getUsername(),user.getPassword());
+        return users.size() <= 0;
+    }
 }

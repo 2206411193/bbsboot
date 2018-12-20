@@ -19,7 +19,7 @@
 <div class="password">password：********</div>
 <div class="time">time now：<div id="txt" style="float: right"></div></div>
 <%--退出按钮，点击loginout，返回mainPage.jsp界面--%>
-<a href="/user/logout.do" class="logout"><input class="button2" type="submit" />logout</a>
+<a href="/user/logout.do" class="logout"><input class="button2" type="submit" value="logout"/></a>
 
 <div class="middle">
     <div class="left">
