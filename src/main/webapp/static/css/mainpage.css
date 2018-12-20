@@ -1,0 +1,165 @@
+/* 弹出 样式 */
+.mini_login{
+    display:none;
+    position:absolute;
+    z-index:5;
+    background:white;
+}
+.mini_login .item{
+    width:320px;
+    margin:0 auto;
+    height:48px;
+    line-height:48px;
+    padding:0 20px;
+}
+/* 登录窗第一行*/
+.mini_login .firstLine{
+    color:#666;
+    background:#d5d5d5;
+    font-size:18px;
+    font-weight:bold;
+    cursor:move;
+}
+.mini_login .item .login_close{
+    display:inline-block;
+    float:right;
+    cursor:pointer;
+}
+
+.mini_login .item label{
+    font-size:14px;
+    margin-right:15px;
+    color: black;
+}
+.mini_login .item input{
+    display:inline-block;
+    height:60%;
+    width:70%;
+}
+/* 登录按钮 */
+.mini_login .item a.btn_login{
+    display:block;
+    margin:10px 10% 0;
+    height:30px;
+    line-height:30px;
+    width:80%;
+    background:#4490F7;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+    position: absolute;
+    top:140px;
+    left: 10px;
+}
+/* 遮罩层样式 */
+.cover{
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    background-color:#000;
+    opacity:0.3;
+}
+
+body {
+    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+header {
+    width:100%;
+    height:100px;
+}
+nav{
+    height: 120px;
+    background: center;
+    background-size:50%;
+    background-repeat: no-repeat;
+    margin: 30px;
+    background-image: url("/static/img/campus.jpg");
+}
+.register{
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    z-index: 2;
+    color: #3399FF;
+}
+a:hover {
+    color: #0000FF;
+    border-radius: 10px;
+}
+.btn_login{
+    position: absolute;
+    top: 80px;
+    right: 130px;
+    z-index: 3;
+    color: #3399FF;
+}
+.middle{
+    width:100%;
+    margin:5px auto;
+}
+.left{
+    width:300px;
+    float:left;
+}
+.right{
+    float:right;
+    width: 800px;
+}
+iframe{
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    right:20px;
+    top:280px;
+    border-style: none;
+    z-index:4;
+}
+.footer {
+    position: absolute;
+    right: 500px;
+    top:1200px;
+    font-size: 10px;
+    z-index:5;
+}
+
+.middle .left button{
+    background-color: lightsalmon; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 40px;
+    cursor: pointer;
+}
+.button1{
+    border-radius: 12px;
+    width:270px;
+
+}
+button a{
+    display: block;
+    text-decoration: none;
+    height: 32px;
+    line-height: 32px;
+}
+button a:link,button a:visited{
+    color: #FFFFFF;
+    background-color: lightsalmon;
+}
+button a:hover{
+    color: #0000FF;
+    border-radius: 10px;
+    /*background-color: coral;*/
+}
