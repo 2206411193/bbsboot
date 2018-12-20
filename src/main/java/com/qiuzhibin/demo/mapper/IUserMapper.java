@@ -20,6 +20,6 @@ public interface IUserMapper {
     List<User> selectUserByUsernameAndPassword(String  username, String  password);
 
     @Insert("INSERT into user (username,password) values(#{username},#{password})")
-    int insertUser(String username,String password);
+   Integer insertUser(String username,String password);
 
 }

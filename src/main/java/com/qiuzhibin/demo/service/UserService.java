@@ -28,6 +28,7 @@ public class UserService implements IUserService{
 
     @Override
     public boolean insertUser(UserVo user) {
+        System.out.println("Service:   "+user.getUsername()+"   "+user.getPassword());
         if(checkvalid(user)){
         int flag = userMapper.insertUser(user.getUsername(),user.getPassword());
         return flag == 1;}else{
