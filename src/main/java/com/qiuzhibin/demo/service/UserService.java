@@ -28,7 +28,6 @@ public class UserService implements IUserService{
 
     @Override
     public boolean insertUser(UserVo user) {
-        System.out.println("Service:   "+user.getUsername()+"   "+user.getPassword());
         if(checkvalid(user)){
         int flag = userMapper.insertUser(user.getUsername(),user.getPassword());
         return flag == 1;}else{
@@ -36,6 +35,17 @@ public class UserService implements IUserService{
         }
             }
 
+    @Override
+    public boolean addStar(int star,User user) {
+        int flag = userMapper.addStar(star,user.getId());
+        return flag==1;
+    }
+
+    @Override
+    public int selectStar(User user) {
+        User getUser = userMapper.selectStar(user.getId());
+        return getUser.getRole();
+    }
     public boolean checkvalid(UserVo user){
         List<User> users = userMapper.selectUserByUsernameAndPassword(user.getUsername(),user.getPassword());
         return users.size() <= 0;

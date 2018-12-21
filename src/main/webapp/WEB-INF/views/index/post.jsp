@@ -30,7 +30,7 @@
             <%--点击各按钮，将数据库保留的信息以固定的模板展示到iframe中--%>
         <button class="button1"><a href="../user/Comment/passUser.jsp" target="five">My post</a></button><br>
         <button class="button1"><a href="../user/Comment/passUser.jsp" target="five">My draft</a></button><br>
-        <button class="button1"><a href="../user/Comment/passUser.jsp" target="five">My collection</a></button><br>
+        <button class="button1"><a href="/game.do">Play game</a></button><br>
         <button class="button1"><a href="../user/Comment/passUser.jsp" target="five">My comments</a></button><br>
         <button class="button1"><a href="../user/Comment/passUser.jsp" target="five">My reprint</a></button><br>
     </div>

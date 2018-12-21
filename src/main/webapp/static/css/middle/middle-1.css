@@ -1,0 +1,212 @@
+
+
+.middle_1{
+    position: absolute;
+    top:20%;
+    z-index: 1;
+
+}
+.responsive{
+    position: relative;
+    margin: 50px;
+}
+/* Style the tab content */
+.tabcontent {
+    color: #666666;
+    display: none;
+    padding: 50px;
+    /*height: 800px;*/
+    text-align: center;
+}
+.img img{
+    position: absolute;
+    top: 50%;
+    right: 42%;
+}
+div.img {
+    margin: 50px;
+    /*position: relative;*/
+    border: 1px solid #ccc;
+    float: left;
+    width: 340px;
+    height: 500px;
+}
+.img_1{
+    position: relative;
+    height: 500px;
+    /*width: 00px;*/
+    background-image: url("../../img-2/iorn-man.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_2{
+    position: relative;
+    height: 500px;
+    /*width: 500px;*/
+    z-index: 1;
+    background-image: url("../../img-2/iorn-man2.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_3{
+    position: relative;
+    height: 500px;
+    /*width: 300px;*/
+    z-index: 1;
+    background-image: url("../../img-2/iorn-man3.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_1_1{
+    position: relative;
+    height: 500px;
+    /*width: 00px;*/
+    background-image: url("../../img-2/caption-america1.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_1_2{
+    position: relative;
+    height: 500px;
+    /*width: 500px;*/
+    z-index: 1;
+    background-image: url("../../img-2/captain-america2.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_1_3{
+    position: relative;
+    height: 500px;
+    /*width: 300px;*/
+    z-index: 1;
+    background-image: url("../../img-2/captain-america3.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_2_1{
+    position: relative;
+    height: 500px;
+    /*width: 00px;*/
+    background-image: url("../../img-2/thor.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_2_2{
+    position: relative;
+    height: 500px;
+    /*width: 500px;*/
+    z-index: 1;
+    background-image: url("../../img-2/thor2.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_2_3{
+    position: relative;
+    height: 500px;
+    /*width: 300px;*/
+    z-index: 1;
+    background-image: url("../../img-2/hulk.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_2_4{
+    position: relative;
+    height: 500px;
+    /*width: 500px;*/
+    z-index: 1;
+    background-image: url("../../img-2/dorter-srtange.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_2_5{
+    position: relative;
+    height: 500px;
+    /*width: 300px;*/
+    z-index: 1;
+    background-image: url("../../img-2/the ant-man.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_3_1{
+    position: relative;
+    height: 500px;
+    /*width: 00px;*/
+    background-image: url("../../img-2/the-avenger1.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_3_2{
+    position: relative;
+    height: 500px;
+    /*width: 500px;*/
+    z-index: 1;
+    background-image: url("../../img-2/the-avengers2.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_3_3{
+    position: relative;
+    height: 500px;
+    /*width: 300px;*/
+    z-index: 1;
+    background-image: url("../../img-2/the-avenger3.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_4_1{
+    position: relative;
+    height: 500px;
+    /*width: 00px;*/
+    background-image: url("../../img-2/agents-of-shield1.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_4_2{
+    position: relative;
+    height: 500px;
+    /*width: 500px;*/
+    z-index: 1;
+    background-image: url("../../img-2/agents-of-shield-2.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_4_3{
+    position: relative;
+    height: 500px;
+    /*width: 300px;*/
+    z-index: 1;
+    background-image: url("../../img-2/agents-of-shield-3.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_4_4{
+    position: relative;
+    height: 500px;
+    /*width: 00px;*/
+    background-image: url("../../img-2/agents-of-shield-4.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_4_5{
+    position: relative;
+    height: 500px;
+    /*width: 500px;*/
+    z-index: 1;
+    background-image: url("../../img-2/agents-of-shield-2-1.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_4_6{
+    position: relative;
+    height: 500px;
+    /*width: 300px;*/
+    z-index: 1;
+    background-image: url("../../img-2/agents-of-shield-2-2.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_4_7{
+    position: relative;
+    height: 500px;
+    /*width: 300px;*/
+    z-index: 1;
+    background-image: url("../../img-2/agents-of-shield-3-1.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+.img_4_8{
+    position: relative;
+    height: 500px;
+    /*width: 300px;*/
+    z-index: 1;
+    background-image: url("../../img-2/agents-of-shield-3-2.png");
+    /*background-image-size:200px 100% 200px 100%;*/
+}
+div.img:hover {
+    border: 1px solid #777;
+}
+
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}

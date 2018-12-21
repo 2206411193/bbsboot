@@ -14,10 +14,10 @@ import java.util.Date;
 @Repository
 public interface IArticleMapper {
 
-    @Insert("insert into article (type_id,up, title, create_time, text,status) values(#{type_id},#{up}, #{title},#{create_time},#{text},#{status})")
-    Integer insertArticle( String title, int type_id, int up,  Date create_time, String text, boolean status);
+    @Insert("insert into article (type_id,up,title,create_time,text,status) values(#{type_id},#{up},#{title},#{create_time},#{text},#{status})")
+    Integer insertArticle( String title, int type_id, int up,Date create_time,String text, boolean status);
     @Delete("delete from article where id=#{id}")
     Integer deleteArticle(int id);
-    @Select("select * from article where up = #{id}")
+    @Select("select title,type_id, text,status from article where up = #{id}")
     ArrayList<ArticleVo> getAllArticleByUpId(int id);
 }

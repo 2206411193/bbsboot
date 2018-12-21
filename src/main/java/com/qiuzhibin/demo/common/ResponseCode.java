@@ -1,5 +1,8 @@
 package com.qiuzhibin.demo.common;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.PrintWriter;
+
 public class ResponseCode {
     public static final int ADMIN_ROLE = 0;
     public static final int COMMON_ROLE = 1;
@@ -7,4 +10,5 @@ public class ResponseCode {
     public static final String LOGIN_ERROR = "LOGIN_ERROR";
     public static final String REGISTER_SUCCESS = "REGISTER_SUCCESS";
     public static final String REGISTER_ERROR = "REGISTER_ERROR";
+
 }

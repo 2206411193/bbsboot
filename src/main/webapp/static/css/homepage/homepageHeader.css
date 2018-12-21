@@ -1,0 +1,41 @@
+header{
+    width: 100%;
+    height: 590px;
+    background: url("/static/img/img-1/timg3.png")no-repeat top left fixed;
+    background-size: 100%;
+}
+.logoImg{
+    position: absolute;
+    top:20px;
+    left: 20px;
+    z-index: 7;
+}
+.logoImg0{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 400px;
+    height: 50px;
+    z-index: 6;
+    opacity:1.0;
+    filter:alpha(opacity=100);
+}
+header img
+ {
+     opacity:0.4;
+     filter:alpha(opacity=40);
+ }
+header img:hover
+{
+    opacity:1.0;
+    filter:alpha(opacity=100); /* 适用 IE8 及其更早版本 */
+}
+
+.image{
+     position: absolute;
+     /*top: 13.5%;*/
+     right: 15%;
+     width: 70%;
+     height: 75% ;
+     padding-bottom: 100%;
+ }

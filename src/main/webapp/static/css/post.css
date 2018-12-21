@@ -38,7 +38,7 @@ iframe{
     z-index:5;
 }
 .middle .left button{
-    background-color: lightsalmon; /* Green */
+    background-color: black; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;

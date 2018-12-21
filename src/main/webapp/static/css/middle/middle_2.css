@@ -1,0 +1,26 @@
+.middle_2 {
+    position: fixed;
+    top: 12%;
+    width: 100%;
+    z-index: 2;
+}
+
+.tablink {
+    /*position: fixed;*/
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 20%;
+    box-shadow: 10px 10px 5px #888888;
+}
+.tablink:hover {
+    background-color: #777;
+}
+body {
+    font-family: "Lato", sans-serif;
+}

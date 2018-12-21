@@ -1,0 +1,10 @@
+.footer {
+    height: 200px;
+
+}
+.footer h5{
+    color: #666666;
+    height: 200px;
+    background-color: #d5d5d5;
+    /*background: radial-gradient(circle, red, yellow,darkblue );*/
+}

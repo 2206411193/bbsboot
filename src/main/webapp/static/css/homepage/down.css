@@ -1,0 +1,29 @@
+.down{
+    height: 400px;
+    position: relative;
+}
+.down .right{
+    float: right;
+    width: 50%;
+    height: 300px;
+    display: block;
+    background-image: url("../../img-1/10the-avengers.jpg");
+
+    box-shadow: 10px 10px 5px #888888;
+}
+.down a{
+    text-decoration: none;
+    color: darkblue;
+}
+.down a:hover{
+    color: cornflowerblue;
+}
+
+.down .left{
+    float: left;
+    width: 48%;
+    height: 300px;
+    display: block;
+    background-image: url("../../img-1/yinhe.jpg");
+    box-shadow: 10px 10px 5px #888888;
+}

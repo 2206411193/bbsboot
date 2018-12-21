@@ -1,5 +1,6 @@
 package com.qiuzhibin.demo.controller;
 
+import com.qiuzhibin.demo.common.Dig;
 import com.qiuzhibin.demo.common.ResponseCode;
 import com.qiuzhibin.demo.model.Type;
 import com.qiuzhibin.demo.model.User;
@@ -16,6 +17,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.testng.internal.Utils;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -37,14 +41,22 @@ public class UserController {
 
     // 用户登录
     @RequestMapping(value = "/login.do", method = RequestMethod.POST)
-    public String login(UserVo userVo, HttpServletRequest request, RedirectAttributes redirectAttributes) {
+    public String login(UserVo userVo,HttpServletResponse response, HttpServletRequest request, RedirectAttributes redirectAttributes) {
         request.getSession().setAttribute("title", "login");
-        User user = userService.login(userVo);
+        User user = null;
+        user = (User)request.getSession().getAttribute("user");
+//        if(user!=null){
+//            Dig.digBack(response, "无需重复登陆!");
+//        }
+          user = userService.login(userVo);
         if (user != null) {
             request.getSession().setAttribute("user", user);
             System.out.println("成功登陆！"+user.getUsername());
-            redirectAttributes.addFlashAttribute(ResponseCode.LOGIN_SUCCESS, "登陆成功！");
-            return "redirect:/post.do";
+              if(user.getRole()==0)
+            return "redirect:/commonUserMain.do";
+              else{
+                  return "redirect:/vipUserMain.do";
+              }
         } else {
             redirectAttributes.addFlashAttribute(ResponseCode.LOGIN_ERROR, "账户或密码错误!");
         }
@@ -61,21 +73,20 @@ public class UserController {
 
     //用户注册
     @RequestMapping(value = "/register.do", method = RequestMethod.POST)
-    public String register(UserVo user,HttpServletRequest request, RedirectAttributes redirectAttr) {
+    public String register(UserVo user,HttpServletRequest request,HttpServletResponse response) {
         if(Utils.isStringBlank(user.getUsername())){
-            System.out.println("用户名不为空！");
-            return "";
+            System.out.println("");
+            Dig.digBack(response, "用户名不为空！");
         }
         if(Utils.isStringBlank(user.getPassword())){
-            System.out.println("密码不为空！");
-            return "";
+            Dig.digBack(response, "密码不为空！");
         }
-        if(!userService.insertUser(user)){
-
-            System.out.println("注册失败，用户已存在！");
-        }
+        boolean flag =  userService.insertUser(user);
+        if(!flag){
+            Dig.digBack(response, "用户已存在！");
+        }else{
         request.getSession().setAttribute("user", user);
-        System.out.println("注册成功:   "+user.getUsername()+"   "+user.getPassword());
+        System.out.println("注册成功:   "+user.getUsername()+"   "+user.getPassword());}
         return "redirect:/post.do";
     }
 
@@ -92,18 +103,6 @@ public class UserController {
 //        articleService.SaveDraft(article);
 //    }
 
-    //展示用户文章
-    @ResponseBody
-    @RequestMapping(value = "/showArticle.do" ,method = RequestMethod.GET)
-    public String showArticle(HttpServletRequest request){
-        User user = (User) request.getSession().getAttribute("user");
-        if(user!=null){
-            ArrayList<ArticleVo> articles = articleService.getAllArticle(user.getId());
-            request.setAttribute("articles",articles);
-          return "user/ArticleList";
-        }
-   return "b";
-    }
 
 
     //用户发布文章
@@ -132,6 +131,22 @@ public class UserController {
 }
 
 
-    //用户回复
+    //用户充值
+    @RequestMapping(value = "becomeVip.do" ,method = RequestMethod.POST)
+    public String becomeVip(@RequestParam("star") int star, HttpServletRequest request,HttpServletResponse response){
+        User user = (User) request.getSession().getAttribute("user");
+
+        if(user!=null){
+            int num = userService.selectStar(user);
+            star = num+star;
+            boolean flag =  userService.addStar(star,user);
+            if(flag){
+            int num1 = userService.selectStar(user);
+            request.getSession().setAttribute("star",star);
+            }
+        }
+     return "redirect:/showBecomeVip.do";
+    }
+
 
 }

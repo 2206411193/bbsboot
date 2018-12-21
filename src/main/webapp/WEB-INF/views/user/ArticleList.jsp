@@ -18,9 +18,8 @@
         <tr>
 
             <td align = "center">${article.id}</td>
-            <td align = "center">${user.text}</td>
-            <td align = "center">${user.status}</td>
-
+            <td align = "center">${article.text}</td>
+            <td align = "center">${article.status}</td>
         </tr>
     </c:forEach>
 </p>

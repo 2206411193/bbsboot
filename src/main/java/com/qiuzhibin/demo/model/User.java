@@ -3,6 +3,8 @@ package com.qiuzhibin.demo.model;
 public class User {
     String username;
     String password;
+    int id;
+    int role;
   public User(){
 
   }
@@ -18,8 +20,7 @@ public class User {
         this.role = role;
     }
 
-    int id;
-    int role;
+
 
     public String getUsername() {
         return username;

@@ -1,22 +1,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
     <title>register</title>
-    <link type="text/css" rel="stylesheet" href="/static/css/register.css" />
+    <link href="/static/css/homepage/login1.css" type="text/css" rel="stylesheet">
+    <script src="/static/login1.js" type="text/javascript" > </script>
 </head>
-<body background="/static/img/nightMoon.jpg">
-<div class="logGet">
-    <p align="center"> <a target="ff" class="p1">register</a></p>
-    <form method="post" action="/user/register.do">
-        <div class="lgD">
-            <input type="text" placeholder="Enter one username" name="username" /> </div>
-        <div class="lgD">
-            <input type="password" placeholder="Enter user password" name="password" /> </div>
-        <div class="logC">
-            <%--点击注册，跳转到mainPage.jsp页面，并且数据库保存新输入的账户，密码--%>
-            <button class="button1"><input type="submit" value="Register"/></button></div>
+<body>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;
+ background: linear-gradient(to bottom right, darkblue , black);position: absolute;top: 20%;right: 50%;"> Click on me</button>
+
+<div id="id01" class="modal">
+
+    <form class="modal-content animate"  method="post" action="/user/register.do">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="https://static.runoob.com/images/mix/img_avatar.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label><b>Input Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label><b>Input Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit">register</button>
+            <input type="checkbox" checked="checked">remember me</div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">To tomepage <a href="/user/login.do" style="text-decoration: none">login</a></span>
+        </div>
     </form>
 </div>
-<jsp:include page=""/>
+</body>
 </html>

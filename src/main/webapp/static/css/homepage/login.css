@@ -1,0 +1,71 @@
+/* 弹出 样式 */
+.mini_login{
+    display:none;
+    position:fixed;
+    z-index:5;
+    top: 65px;
+    right: 0px;
+    width: 320px;
+    height: 100px;
+    background-color: black;
+    text-align: center;
+}
+.mini_login .item{
+    width:280px;
+    margin:0 auto;
+    height:55px;
+    line-height:55px;
+    padding:0 20px;
+}
+/* 登录窗第一行*/
+.mini_login .firstLine{
+    color:#666;
+    background:#d5d5d5;
+    font-size:18px;
+    font-weight:bold;
+    cursor:move;
+}
+.mini_login .item .login_close{
+    display:inline-block;
+    float:right;
+    cursor:pointer;
+}
+
+.mini_login .item label{
+    font-size:14px;
+    margin-right:15px;
+    color: black;
+}
+.mini_login .item input{
+    display:inline-block;
+    height:60%;
+    width:70%;
+}
+/* 登录按钮 */
+.mini_login .item a.btn_login{
+    display:block;
+    margin:10px 10% 0;
+    height:40px;
+    line-height:40px;
+    width:80%;
+    background:#000000;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+    position: absolute;
+    top:160px;
+    left: 10px;
+}
+/* 遮罩层样式 */
+.cover{
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    background-color:#000;
+    opacity:0.3;
+}

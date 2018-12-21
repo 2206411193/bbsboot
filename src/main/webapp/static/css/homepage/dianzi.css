@@ -1,0 +1,21 @@
+.dianzi{
+    height: 200px;
+    position: relative;
+}
+.dianzi .first
+{
+    width:100px;
+    height:75px;
+    background: linear-gradient(to bottom right, red , blue);
+    border:1px solid #5b6ddc;
+}
+.dianzi .third
+{
+    width:100px;
+    height:75px;
+    background: linear-gradient(to bottom right, red , blue);
+    border:1px solid #5b6ddc;
+    transform:rotate(30deg);
+    -ms-transform:rotate(30deg); /* IE 9 */
+    -webkit-transform:rotate(30deg); /* Safari and Chrome */
+}

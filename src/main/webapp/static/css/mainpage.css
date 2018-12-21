@@ -1,9 +1,11 @@
 /* 弹出 样式 */
 .mini_login{
     display:none;
-    position:absolute;
+    position:relative;
     z-index:5;
     background:white;
+    margin-right: 10px;
+
 }
 .mini_login .item{
     width:320px;
@@ -11,6 +13,7 @@
     height:48px;
     line-height:48px;
     padding:0 20px;
+
 }
 /* 登录窗第一行*/
 .mini_login .firstLine{
