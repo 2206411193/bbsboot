@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
-@ServletComponentScan("com.qiuzhibin.demo.filter")
+//@ServletComponentScan("com.qiuzhibin.demo.filter")
 @MapperScan("com.qiuzhibin.demo.mapper")
 @SpringBootApplication
 public class DemoApplication {
