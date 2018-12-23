@@ -13,6 +13,6 @@
   </form>
 
   当前您的小星星数目为:${sessionScope.get("star")}
-  <button><a href="/showMain.do">返回</a></button>
+  <button><a href="/showMainAfterLogin.do">返回</a></button>
 </body>
 </html>

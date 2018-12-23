@@ -13,7 +13,7 @@
     <link href="static/css/homepage/down.css" type="text/css" rel="stylesheet">
     <link href="static/css/homepage/footer.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="/static/js/login.js"></script>
-    <script src="static/js-1/login.js" type="text/javascript" > </script>
+    <script src="static/js/login.js" type="text/javascript" > </script>
     <script type="text/javascript" src="/static/js/jquery-1.9.1.js"></script>
     <style>
         body {

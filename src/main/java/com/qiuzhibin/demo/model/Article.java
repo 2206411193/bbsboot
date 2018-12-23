@@ -1,5 +1,6 @@
 package com.qiuzhibin.demo.model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Article {
@@ -8,7 +9,7 @@ public class Article {
     int type_id;
     int up;
     String title;
-    Date create_time;
+    Timestamp create_time;
     String text;
     boolean status;
 
@@ -23,30 +24,23 @@ public class Article {
     public Article(){
 
  }
-    public Article(String title, int type_id, String text,boolean status) {
+    public Article(String title, int type_id,Timestamp create_time,String text){
+
+        this.title=title;
         this.type_id = type_id;
-        this.title = title;
+        this.create_time = create_time;
         this.text = text;
-        this.status =  status;
+
     }
-    public Article(String title, int type_id, int up,  Date create_time, String text,boolean status) {
+    public Article(int id,String title, int type_id, int up,  Timestamp create_time, String text) {
         this.title=title;
         this.type_id = type_id;
         this.up = up;
         this.create_time = create_time;
         this.text = text;
-        this.status =  status;
+        this.id = id;
     }
 
-    public Article(int id, int type_id, int up, String title, Date create_time, String text,boolean status) {
-        this.id = id;
-        this.type_id = type_id;
-        this.up = up;
-        this.title = title;
-        this.create_time = create_time;
-         this.text = text;
-        this.status =  status;
-    }
 
     public int getId() {
         return id;
@@ -84,7 +78,7 @@ public class Article {
         return create_time;
     }
 
-    public void setCreate_time(Date create_time) {
+    public void setCreate_time(Timestamp create_time) {
         this.create_time = create_time;
     }
 

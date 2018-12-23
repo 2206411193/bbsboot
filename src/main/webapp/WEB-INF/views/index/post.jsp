@@ -63,12 +63,12 @@
         <%--</div>--%>
         <%--保存标题，内容，在数据库中标记转发--%>
 
-        <div class="reprint">
+        <%--<div class="reprint">--%>
 
-            <input form="article" name="status" type="radio" checked="checked" value="0"/>draft</br>
-            <input form="article" name="status" type="radio" value="1"/>post
+            <%--<input form="article" name="status" type="radio" checked="checked" value="0"/>draft</br>--%>
+            <%--<input form="article" name="status" type="radio" value="1"/>post--%>
 
-        </div>
+        <%--</div>--%>
 
         <div class="posting">
 

@@ -4,40 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Movie-loginlatter</title>
-    <link href="/static/css/nav/navbar.css" type="text/css" rel="stylesheet">
+    <link href="/static/css/nav/navbar_1.css" type="text/css" rel="stylesheet">
     <link href="/static/css/middle/middle-1.css" type="text/css" rel="stylesheet">
     <link href="/static/css/middle/middle_2.css" type="text/css" rel="stylesheet">
     <script src="/static/js/vidio.js" type="text/javascript" > </script>
-    <link href="/static/css/homepage/login.css" type="text/css" rel="stylesheet">
-    <script src="/static/js/login.js" type="text/javascript" > </script>
 </head>
 <body>
 
 <div class="navbar">
-    <a href="/showMain.do" style="float: left"><img src="static/img/img-2/goBack_1.png"> go-back</a>
-    <a href="/showRegister.do" style="float: right">register</a>
-    <!--主体-->
-    <a href="javascript:void(0)" id="btn_showlogin" style="text-decoration: none;float: right">login</a>
+    <a href="/showMainAfterLogin.do" style="float: left"><img src="/static/img/img-2/goBack_1.png"> go-back</a>
+    <div class="dropdown">
+        <div class="dropdown-content">
+            <a href="../information/modify-information.html">&nbsp;&nbsp;&nbsp;Modify Information</a>
+            <a href="/showBecomeVip.do">&nbsp;&nbsp;&nbsp;Become Member</a>
+        </div>
+    </div>
+    <a href="/showMainAfterLogin.do" style="float: right"><img src="/static/img/img-2/tuzi.jpg" style="border-radius: 50%; width: 35px;height: 35px"></a>
+
 </div>
-<!-- 弹出登录小窗口 -->
-<div class="mini_login"  id="mini_login" >
-    <!-- 表单 -->
-    <form action="/user/login.do" method="post">
-        <div class="item">
-            <label style="color: white">用户名：</label>
-            <input style="border-radius:7px;height: 20px" type="text" name="username"/>
-        </div>
-        <div class="item">
-            <label style="color: white">密&nbsp&nbsp码：</label>
-            <input  style="border-radius:7px;height: 20px" type="password" name="password" />
-        </div>
-        <div class="item">
-            <input style="border-radius: 7px; background-color: black;color: white" class="btn_login" type="submit" value="login">
-        </div>
-    </form>
-</div>
-<!-- 遮罩层 -->
-<%--<div class="cover"></div>--%>
+
 <div class="middle_2" style="top: 80px">
     <button class="tablink" onclick="openCity('Iron Man', this, 'red')" id="defaultOpen">Iron Man</button>
     <button class="tablink" onclick="openCity('Captain America', this, 'green')">Captain America</button>

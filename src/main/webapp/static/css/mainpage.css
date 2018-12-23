@@ -1,8 +1,9 @@
 /* 弹出 样式 */
 .mini_login{
+
     display:none;
-    position:relative;
-    z-index:5;
+    position:fixed;
+    z-index:0;
     background:white;
     margin-right: 10px;
 

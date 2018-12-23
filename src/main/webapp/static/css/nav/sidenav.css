@@ -26,9 +26,14 @@ body {
 }
 
 .main {
-    margin-left: 140px; /* 与sidenav的宽度相同 */
-    font-size: 28px; /* 字体放大，让页面可滚动 */
+
+    position: absolute;
+    top:240px;
+    margin-left: 280px; /* 与sidenav的宽度相同 */
+    font-size: 16px; /* 字体放大，让页面可滚动 */
     padding: 0px 10px;
+    overflow-y: auto;
+    height: 800px;
 }
 
 @media screen and (max-height: 450px) {

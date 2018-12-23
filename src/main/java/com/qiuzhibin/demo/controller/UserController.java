@@ -2,12 +2,15 @@ package com.qiuzhibin.demo.controller;
 
 import com.qiuzhibin.demo.common.Dig;
 import com.qiuzhibin.demo.common.ResponseCode;
+import com.qiuzhibin.demo.model.Reply;
 import com.qiuzhibin.demo.model.Type;
 import com.qiuzhibin.demo.model.User;
 import com.qiuzhibin.demo.model.vo.ArticleVo;
+import com.qiuzhibin.demo.model.vo.ReplyVo;
 import com.qiuzhibin.demo.model.vo.UserVo;
 import com.qiuzhibin.demo.service.ArticleService;
 import com.qiuzhibin.demo.service.IArticleService;
+import com.qiuzhibin.demo.service.IReplyService;
 import com.qiuzhibin.demo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -20,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,6 +36,8 @@ public class UserController {
     private IUserService userService;
     @Autowired
     private IArticleService articleService;
+    @Autowired
+    private IReplyService replyService;
 
     @RequestMapping("/showUser/{id}")
     public String selectUser(@PathVariable int id) {
@@ -52,7 +58,7 @@ public class UserController {
         if (user != null) {
             request.getSession().setAttribute("user", user);
             System.out.println("成功登陆！"+user.getUsername());
-              if(user.getRole()==0)
+              if(user.getRole()<=10)
             return "redirect:/commonUserMain.do";
               else{
                   return "redirect:/vipUserMain.do";
@@ -87,7 +93,7 @@ public class UserController {
         }else{
         request.getSession().setAttribute("user", user);
         System.out.println("注册成功:   "+user.getUsername()+"   "+user.getPassword());}
-        return "redirect:/post.do";
+        return "redirect:/showMainAfterLogin.do";
     }
 
 //    @RequestMapping("getType.do")
@@ -111,7 +117,8 @@ public class UserController {
 
        User user = (User) request.getSession().getAttribute("user");
        Date date = new Date();
-       article.setCreate_time(date);
+       Timestamp ts = new Timestamp(date.getTime());
+       article.setCreate_time(ts);
        article.setUp(user.getId());
        System.out.println("用户已登陆！ "+user.getUsername());
        System.out.println(article.getText());
@@ -120,7 +127,8 @@ public class UserController {
           boolean flag =  articleService.SaveArticle(article);
           if(flag){
            System.out.println("保存成功！");
-           return "redirect:/showArticle.do";}
+           return "redirect:/topic.do";
+          }
           else{
               System.out.println("出错！");
           }
@@ -130,7 +138,25 @@ public class UserController {
 
 }
 
-
+@RequestMapping(value = "/reply/{id}",method = RequestMethod.POST)
+public String reply(@PathVariable int id, ReplyVo replyVo,HttpServletRequest request){
+    Date date = new Date();
+    Reply reply = replyVo;
+    Timestamp ts = new Timestamp(date.getTime());
+    User user = (User) request.getSession().getAttribute("user");
+    if(user!=null){
+//         reply.setUsername(userService.selectUser(user.getId()).getUsername());
+         reply.setCreate_time(ts);
+         reply.setAid(id);
+         reply.setUp(user.getId());
+         boolean flag = replyService.InsertReply(reply);
+         System.out.println(reply.getText());
+         if (flag){
+             return "redirect:/showArticleById/"+id;
+         }
+    }
+    return "";
+}
     //用户充值
     @RequestMapping(value = "becomeVip.do" ,method = RequestMethod.POST)
     public String becomeVip(@RequestParam("star") int star, HttpServletRequest request,HttpServletResponse response){
@@ -142,7 +168,6 @@ public class UserController {
             boolean flag =  userService.addStar(star,user);
             if(flag){
             int num1 = userService.selectStar(user);
-            request.getSession().setAttribute("star",star);
             }
         }
      return "redirect:/showBecomeVip.do";

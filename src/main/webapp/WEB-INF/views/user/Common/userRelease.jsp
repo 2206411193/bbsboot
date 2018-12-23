@@ -11,6 +11,7 @@
     <title>userrelease</title>
 </head>
 <body>
+
 <%--输入数据库我的用户名--%>
 user:${sessionScope.get("username")}<br><br>
 

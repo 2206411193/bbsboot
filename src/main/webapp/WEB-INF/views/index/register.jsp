@@ -8,9 +8,14 @@
     <script src="/static/login1.js" type="text/javascript" > </script>
 </head>
 <body>
+<script>
+    window.onload = function(){
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;
- background: linear-gradient(to bottom right, darkblue , black);position: absolute;top: 20%;right: 50%;"> Click on me</button>
+        document.getElementById('id01').style.display='block';
+    }
+</script>
+<%--<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;--%>
+ <%--background: linear-gradient(to bottom right, darkblue , black);position: absolute;top: 20%;right: 50%;"> Click on me</button>--%>
 
 <div id="id01" class="modal">
 
@@ -32,7 +37,7 @@
 
         <div class="container" style="background-color:#f1f1f1">
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            <span class="psw">To tomepage <a href="/user/login.do" style="text-decoration: none">login</a></span>
+            <span class="psw">To tomepage <a href="/showMainAfterLogin.do" style="text-decoration: none">login</a></span>
         </div>
     </form>
 </div>

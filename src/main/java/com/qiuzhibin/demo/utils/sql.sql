@@ -1,4 +1,11 @@
-
+alter table article convert to character set utf8mb4 collate utf8mb4_unicode_ci;
+alter table reply convert to character set utf8mb4 collate utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) varchar(300) NOT NULL AUTO_INCREMENT,
+  `username`  NOT NULL,
+  `password` varchar(300) NOT NULL,
+  PRIMARY KEY (`id`)
+  );
 CREATE TABLE IF NOT EXISTS `article` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_id` int(11) NOT NULL,

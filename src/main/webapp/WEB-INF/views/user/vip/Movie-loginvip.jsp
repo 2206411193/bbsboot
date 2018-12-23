@@ -7,38 +7,17 @@
     <link href="/static/css/nav/navbar.css" type="text/css" rel="stylesheet">
     <link href="/static/css/middle/middle-1.css" type="text/css" rel="stylesheet">
     <link href="/static/css/middle/middle_2.css" type="text/css" rel="stylesheet">
-    <script src="/static/js/vidio.js" type="text/javascript" > </script>
-    <link href="/static/css/homepage/login.css" type="text/css" rel="stylesheet">
-    <script src="/static/js/login.js" type="text/javascript" > </script>
+    <script src="/static/js-1/vidio.js" type="text/javascript" > </script>
 </head>
 <body>
 
 <div class="navbar">
-    <a href="/showMain.do" style="float: left"><img src="static/img/img-2/goBack_1.png"> go-back</a>
-    <a href="/showRegister.do" style="float: right">register</a>
-    <!--主体-->
-    <a href="javascript:void(0)" id="btn_showlogin" style="text-decoration: none;float: right">login</a>
+    <a href="/showMainAfterLogin.do" style="float: left"><img src="/static/img/img-2/goBack_1.png"> go-back</a>
+        <a href="/showMainAfterLogin.do" style="float: right;">username:${sessionScope.get("user").getUsername()}</a>
+    <a href="vipUserMain.jsp" style="float: right"><img src="/static/img/img-2/tuzi.jpg" style="border-radius: 50%; width: 35px;height: 35px"></a>
 </div>
-<!-- 弹出登录小窗口 -->
-<div class="mini_login"  id="mini_login" >
-    <!-- 表单 -->
-    <form action="/user/login.do" method="post">
-        <div class="item">
-            <label style="color: white">用户名：</label>
-            <input style="border-radius:7px;height: 20px" type="text" name="username"/>
-        </div>
-        <div class="item">
-            <label style="color: white">密&nbsp&nbsp码：</label>
-            <input  style="border-radius:7px;height: 20px" type="password" name="password" />
-        </div>
-        <div class="item">
-            <input style="border-radius: 7px; background-color: black;color: white" class="btn_login" type="submit" value="login">
-        </div>
-    </form>
-</div>
-<!-- 遮罩层 -->
-<%--<div class="cover"></div>--%>
-<div class="middle_2" style="top: 80px">
+
+<div class="middle_2" style="top: 90px">
     <button class="tablink" onclick="openCity('Iron Man', this, 'red')" id="defaultOpen">Iron Man</button>
     <button class="tablink" onclick="openCity('Captain America', this, 'green')">Captain America</button>
     <button class="tablink" onclick="openCity('Thor&Other', this, 'blue')">Thor&Other</button>
@@ -52,7 +31,7 @@
 
             <div class="img">
                 <div class="img_1">
-                    <a target="_blank" href="https://www.ttll.cc/dy/dy4/gangtiexiagaoqing/bf-0-0.html">
+                    <a target="_blank" href="https://v.qq.com/x/cover/ciwsbplwbrje0gt.html">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
@@ -60,7 +39,7 @@
             </div>
             <div class="img">
                 <div class="img_2">
-                    <a target="_parent" href="#">
+                    <a target="_blank" href="https://v.qq.com/x/cover/90qkh14unn4q8xu/v0020sk2lw4.html?">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
@@ -87,7 +66,7 @@
 
             <div class="img">
                 <div class="img_1_1">
-                    <a target="_blank" href="http://v.yinyuetai.com/video/3217305?vid=2490743">
+                    <a target="_blank" href="https://v.qq.com/x/cover/891a0latn4c5chp/r0018t60y1z.html?">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
@@ -95,7 +74,7 @@
             </div>
             <div class="img">
                 <div class="img_1_2">
-                    <a target="_parent" href="#">
+                    <a target="_blank" href="https://v.qq.com/x/cover/ix5jw6tz5ghz4dc.html">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
@@ -103,7 +82,7 @@
             </div>
             <div class="img">
                 <div class="img_1_3">
-                    <a target="_parent" href="#">
+                    <a target="_blank" href="https://v.qq.com/x/cover/kzhcitf07bg2pxy.html">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
@@ -122,15 +101,16 @@
 
             <div class="img">
                 <div class="img_2_1">
-                    <a target="_blank" href="http://v.yinyuetai.com/video/3232932">
+                    <a target="_blank" href="https://v.qq.com/x/cover/sjfw7p2cz0ff6m9/i0018msd6dc.html?">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
                 <div class="desc">Movie name:《Thor》</div>
             </div>
+
             <div class="img">
                 <div class="img_2_2">
-                    <a target="_parent" href="#">
+                    <a target="_blank" href="https://v.qq.com/x/cover/gib6uvlt5rfudib.html">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
@@ -139,8 +119,8 @@
 
             <div class="img">
                 <div class="img_2_6">
-                    <a target="_parent" href="#">
-                        <img src="static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
+                    <a target="_blank" href="https://v.qq.com/x/cover/j5lolls4qv1mptx.html">
+                        <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
                 <div class="desc">Movie name:《The Hulk 1》</div>
@@ -148,15 +128,16 @@
 
             <div class="img">
                 <div class="img_2_3">
-                    <a target="_parent" href="#">
+                    <a target="_blank" href="https://v.qq.com/x/cover/vwq7gmy475harwj.html">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
-                <div class="desc">Movie name:《The Hulk》</div>
+                <div class="desc">Movie name:《The Hulk 2》</div>
             </div>
+
             <div class="img">
                 <div class="img_2_4">
-                    <a target="_parent" href="#">
+                    <a target="_blank" href="https://v.qq.com/x/cover/uvl5rs2euhfgoip/h0022otg21y.html?">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
@@ -164,7 +145,7 @@
             </div>
             <div class="img">
                 <div class="img_2_5">
-                    <a target="_parent" href="#">
+                    <a target="_blank" href="https://v.qq.com/x/cover/zl6n65vy9hgrarl/u0019j97d7o.html?">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
@@ -183,7 +164,7 @@
 
             <div class="img">
                 <div class="img_3_1">
-                    <a target="_blank" href="http://v.yinyuetai.com/video/3235875">
+                    <a target="_blank" href="https://v.qq.com/x/cover/cz2szzeahb8aj1k/z0012pc1s2j.html?">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
@@ -191,7 +172,7 @@
             </div>
             <div class="img">
                 <div class="img_3_2">
-                    <a target="_parent" href="#">
+                    <a target="_blank" href="https://v.qq.com/x/cover/w7ju7urc1x4w3jc/t0017mlfdg4.html?">
                         <img src="/static/img/img-1/bofang.jpg" alt="图片文本描述" width="50px" height="50px">
                     </a>
                 </div>
@@ -288,6 +269,7 @@
     </div>
 
 </div>
+
 
 
 </body>

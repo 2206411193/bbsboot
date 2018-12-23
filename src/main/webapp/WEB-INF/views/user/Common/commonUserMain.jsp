@@ -20,10 +20,11 @@
 </head>
 <body>
 <div class="navbar">
-    <a href="../login/Movie-loginlatter.html" style="float: left;">Movie Appreciation</a>
-    <a href="../login/topic-loginlatter.html" style="float: left">Hot topic</a>
+    <a href="/Movie.do" style="float: left;">Movie Appreciation</a>
+    <a href="/topic.do" style="float: left">Hot topic</a>
     <div class="dropdown">
-     <a href="commonUserMain.jsp" style="float: right;">username:${sessionScope.get("user").getUsername()}</a>
+     <a href="/showMainAfterLogin.do" style="float: right;">username:${sessionScope.get("user").getUsername()}</a>
+        <a href="/user/logout.do" style="float: right;">登出</a>
     <div class="dropdown-content">
     <a href="../information/modify-information.html">&nbsp;&nbsp;&nbsp;Modify Information</a>
     <a href="/showBecomeVip.do">&nbsp;&nbsp;&nbsp;Become Member</a>
