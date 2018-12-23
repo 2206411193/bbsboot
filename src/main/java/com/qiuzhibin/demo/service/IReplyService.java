@@ -9,5 +9,6 @@ public interface IReplyService {
 
     ArrayList<Reply> getReplyByArticleId(int aid);
     boolean InsertReply(Reply reply);
-
+    ArrayList<Reply> getAllReply();
+    boolean deleteReplyById(int id);
 }

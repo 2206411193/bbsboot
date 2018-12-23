@@ -6,6 +6,7 @@ import com.qiuzhibin.demo.model.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -13,8 +14,8 @@ public class UserService implements IUserService{
 
     @Autowired
     IUserMapper userMapper;
-    public User selectUser(int id) {
-        return userMapper.selectUser(id);
+    public ArrayList<User>  selectUser() {
+        return userMapper.selectUser();
     }
 
     @Override
@@ -46,6 +47,12 @@ public class UserService implements IUserService{
         User getUser = userMapper.selectStar(user.getId());
         return getUser.getRole();
     }
+
+    @Override
+    public int deleteUser(int id) {
+        return userMapper.deleteUser(id);
+    }
+
     public boolean checkvalid(UserVo user){
         List<User> users = userMapper.selectUserByUsernameAndPassword(user.getUsername(),user.getPassword());
         return users.size() <= 0;

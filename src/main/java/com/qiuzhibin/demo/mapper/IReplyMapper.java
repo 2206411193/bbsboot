@@ -33,10 +33,18 @@ public interface IReplyMapper {
 
     //某人的某一个回复
     @Select("select id, up, aid, title, create_time, text from article where id=#{id} and up =#{up}")
-    ArticleVo getReplyByIdAndUp(int id,int up);
+    ArrayList<Reply> getReplyByIdAndUp(int id,int up);
 
     //某人所有发表的回复
     @Select("select id, up, aid, title, create_time, text from article where  up =#{up}")
-    ArticleVo getArticleByUp(int up);
+    ArrayList<Reply> getArticleByUp(int up);
+
+    //所有回复
+    @Select("select id, up, aid, title, create_time, text from reply")
+    ArrayList<Reply> getReplys();
+
+    //删除回复
+    @Delete("delete from reply where id=#{id}")
+    Integer deleteArticle(int id);
 
 }

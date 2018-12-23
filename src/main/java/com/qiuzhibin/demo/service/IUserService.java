@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 public interface IUserService {
-      User selectUser(int id);
+      ArrayList<User> selectUser();
       User login(UserVo user);
       boolean insertUser(UserVo user);
       boolean addStar(int star,User user);
       int selectStar(User user);
-
+      int deleteUser(int id);
 
 
 }

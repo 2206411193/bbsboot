@@ -14,4 +14,5 @@ public interface IArticleService {
     String showDraft(int id);
     ArrayList<Article> getAllArticle();
     Article getArticleById(int id);
+    boolean deleteArticleById(int id);
 }

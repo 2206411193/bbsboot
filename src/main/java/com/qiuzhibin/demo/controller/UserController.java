@@ -2,6 +2,7 @@ package com.qiuzhibin.demo.controller;
 
 import com.qiuzhibin.demo.common.Dig;
 import com.qiuzhibin.demo.common.ResponseCode;
+import com.qiuzhibin.demo.model.Article;
 import com.qiuzhibin.demo.model.Reply;
 import com.qiuzhibin.demo.model.Type;
 import com.qiuzhibin.demo.model.User;
@@ -39,10 +40,6 @@ public class UserController {
     @Autowired
     private IReplyService replyService;
 
-    @RequestMapping("/showUser/{id}")
-    public String selectUser(@PathVariable int id) {
-        return userService.selectUser(id).toString();
-    }
 
 
     // 用户登录

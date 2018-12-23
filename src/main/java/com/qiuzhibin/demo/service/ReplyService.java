@@ -24,5 +24,15 @@ public class ReplyService implements IReplyService {
         return num==1;
     }
 
+    @Override
+    public ArrayList<Reply> getAllReply() {
+        return replyMapper.getReplys();
+    }
+
+    @Override
+    public boolean deleteReplyById(int id) {
+        return replyMapper.deleteReply(id)==1;
+    }
+
 
 }

@@ -50,5 +50,10 @@ public class ArticleService implements IArticleService {
         return articleMapper.getArticleById(id);
     }
 
+    @Override
+    public boolean deleteArticleById(int id) {
+        return articleMapper.deleteArticle(id)==1;
+    }
+
 
 }
