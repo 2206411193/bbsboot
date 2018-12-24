@@ -13,6 +13,8 @@ import com.qiuzhibin.demo.service.ArticleService;
 import com.qiuzhibin.demo.service.IArticleService;
 import com.qiuzhibin.demo.service.IReplyService;
 import com.qiuzhibin.demo.service.IUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -32,7 +34,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-
+    private final Logger log = LoggerFactory.getLogger(UserController.class);
     @Autowired
     private IUserService userService;
     @Autowired
@@ -48,17 +50,21 @@ public class UserController {
         request.getSession().setAttribute("title", "login");
         User user = null;
         user = (User)request.getSession().getAttribute("user");
-//        if(user!=null){
-//            Dig.digBack(response, "无需重复登陆!");
-//        }
+
           user = userService.login(userVo);
         if (user != null) {
             request.getSession().setAttribute("user", user);
-            System.out.println("成功登陆！"+user.getUsername());
-              if(user.getRole()<=10)
-            return "redirect:/commonUserMain.do";
-              else{
+          log.info("成功登陆！"+user.getUsername());
+              if(user.getRole()<=10&&user.getRole()>=0){
+                  log.info(user.getUsername()+"是普通用户，跳转到普通用户界面");
+            return "redirect:/commonUserMain.do";}
+              else if(user.getRole()>10){
+                  log.info(user.getUsername()+"是vip，跳转到vip界面");
                   return "redirect:/vipUserMain.do";
+              }
+              else{
+                  log.info(user.getUsername()+"是管理员，跳转到管理员界面");
+                  return "redirect:/adminLogin.do";
               }
         } else {
             redirectAttributes.addFlashAttribute(ResponseCode.LOGIN_ERROR, "账户或密码错误!");
@@ -127,14 +133,18 @@ public class UserController {
            return "redirect:/topic.do";
           }
           else{
-              System.out.println("出错！");
+              log.info("发表文章未知错误，跳转至主界面");
+              return "/showMainAfterLogin.do";
           }
 
        }
-       return "ok";
+       log.info("发表文章未知错误，跳转至主界面");
+       return "/showMain.do";
 
 }
 
+
+    //对某个文章回复
 @RequestMapping(value = "/reply/{id}",method = RequestMethod.POST)
 public String reply(@PathVariable int id, ReplyVo replyVo,HttpServletRequest request){
     Date date = new Date();
@@ -152,7 +162,8 @@ public String reply(@PathVariable int id, ReplyVo replyVo,HttpServletRequest req
              return "redirect:/showArticleById/"+id;
          }
     }
-    return "";
+    log.info("发表评论未知错误，跳转至主界面");
+    return "/showMain.do";
 }
     //用户充值
     @RequestMapping(value = "becomeVip.do" ,method = RequestMethod.POST)
@@ -166,8 +177,10 @@ public String reply(@PathVariable int id, ReplyVo replyVo,HttpServletRequest req
             if(flag){
             int num1 = userService.selectStar(user);
             }
+            return "redirect:/showBecomeVip.do";
         }
-     return "redirect:/showBecomeVip.do";
+        log.info("充值未知错误，跳转至主界面");
+        return "/showMain.do";
     }
 
 

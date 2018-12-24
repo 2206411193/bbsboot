@@ -44,7 +44,7 @@ public class UserService implements IUserService{
 
     @Override
     public int selectStar(User user) {
-        User getUser = userMapper.selectStar(user.getId());
+        User getUser = userMapper.getUserById(user.getId());
         return getUser.getRole();
     }
 

@@ -12,7 +12,7 @@
     <link href="static/css/homepage/more.css" type="text/css" rel="stylesheet">
     <link href="static/css/homepage/down.css" type="text/css" rel="stylesheet">
     <link href="static/css/homepage/footer.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="/static/js/login.js"></script>
+    <%--<script type="text/javascript" src="/static/js/login.js"></script>--%>
     <script src="static/js/login.js" type="text/javascript" > </script>
     <script type="text/javascript" src="/static/js/jquery-1.9.1.js"></script>
     <style>
@@ -22,9 +22,23 @@
     </style>
 </head>
 <body>
+
+
+<header>
+    <a href="#"><img class="logoImg" src="/static/img/img-1/logo.jpg" width="100px" height="60px"/></a>
+    <img src="/static/img/img-1/black.png" class="logoImg0" alt="timg"/>
+    <img src="/static/img/img-1/timg2.png" class="image" alt="timg" height="500px"/>
+
+    <a href="#middle"><img src="static/img/img-1/arrowbottom.png" style="position: absolute;top: 93%;right: 49%;"></a>
+
+</header>
+
 <div class="navbar">
     <a href="/Movie.do" style="float: left;">Movie Appreciation</a>
     <a href="/topic.do" style="float: left">Hot topic</a>
+    <%--超链接位置改一改--%>
+    <a href="/marvel.do" style="float: left;">Marvel Studios</a>
+    <a href="/moreActor.do" style="float: left;">actors</a>
     <a href="/showRegister.do" style="float: right">register</a>
     <!--主体-->
     <a href="javascript:void(0)" id="btn_showlogin" style="text-decoration: none;float: right">login</a>
@@ -48,16 +62,6 @@
 </div>
 <!-- 遮罩层 -->
 <%--<div class="cover"></div>--%>
-
-<header>
-    <a href="#"><img class="logoImg" src="/static/img/img-1/logo.jpg" width="100px" height="60px"/></a>
-    <img src="/static/img/img-1/black.png" class="logoImg0" alt="timg"/>
-    <img src="/static/img/img-1/timg2.png" class="image" alt="timg"/>
-
-    <a href="#middle"><img src="static/img/img-1/arrowbottom.png" style="position: absolute;top: 93%;right: 49%;"></a>
-
-</header>
-
 <a name="middle"></a>
 
 <div class="middle">

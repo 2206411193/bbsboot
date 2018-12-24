@@ -20,6 +20,23 @@
     }
 </script>
 <style type="text/css">
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
     .datalist {
         border: 1px solid #429fff; /* 表格边框 */
         font-family: Arial;
@@ -52,15 +69,22 @@
     }
 </style>
 <body>
-<div>
-    <form class="datalist" action="/addStar.do" method="post">
+    <div class="navbar">
+        <a href="/showMainAfterLogin.do" style="float: left"><img src="/static/img/img-2/goBack_1.png"> go-back</a>
+        <a href="/showMainAfterLogin.do" style="float: right;">username:${sessionScope.get("user").getUsername()}</a>
+        <a href="/showMainAfterLogin.do" style="float: right"><img src="/static/img/img-2/tuzi.jpg" style="border-radius: 50%; width: 35px;height: 35px"></a>
+        <a href="/user/logout.do" style="float: right;">登出</a>
+</div>
+
+    <form class="datalist" style="margin-top: 80px" action="/addStar.do" method="post">
     <table>
+        <caption>充值中心</caption>
         <th>请输入您要充值的用户id</th>
         <th>请输入您要充值的星星：</th>
 
           <tr>
-              <td><input name ="userId" type="number"></td>
-              <td><input name="star" type="number"></td>
+              <td><input name ="userId" type="number" required></td>
+              <td><input name="star" type="number" required></td>
           </tr>
     </table>
         <input type="submit" value="充值">
@@ -98,7 +122,7 @@
         <th>类型</th>
         <th>作者id</th>
         <th>文章标题</th>
-        <th>文章内容</th>
+        <th width="300px">文章内容</th>
         <th>创建时间</th>
         <th>操作</th>
     </tr>
@@ -117,9 +141,6 @@
         </tr>
     </c:forEach>
 </table>
-<p>
-    <a href="add">新增</a>
-</p>
 
 评论管理：
 <table class="datalist" border="1" style="width: 100%">
@@ -140,7 +161,7 @@
             <td>${reply.up}</td>
             <td>${reply.create_time}</td>
             <td>
-                <a href="delete/reply/${reply.id}" class="del">删除</a> |
+                <a href="delete/reply/${reply.id}" class="del">删除</a>
                 <%--<a href="edit/${user.id}">修改</a></td>--%>
         </tr>
     </c:forEach>

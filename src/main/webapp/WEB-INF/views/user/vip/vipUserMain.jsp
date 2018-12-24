@@ -23,6 +23,9 @@
 <div class="navbar">
     <a href="/Movie.do" style="float: left;">Movie Appreciation</a>
     <a href="/topic.do" style="float: left">Hot topic</a>
+    <%--超链接位置改一改--%>
+    <a href="/marvel.do" style="float: left;">Marvel Studios</a>
+    <a href="/moreActor.do" style="float: left;">actors</a>
     <a href="/showMainAfterLogin.do" style="float: right;">username:${sessionScope.get("user").getUsername()}</a>
     <a href="/showMainAfterLogin.do" style="float: right"><img src="/static/img/img-2/tuzi.jpg" style="border-radius: 50%; width: 35px;height: 35px"></a>
     <a href="/user/logout.do" style="float: right;">登出</a>

@@ -11,4 +11,5 @@ public interface IReplyService {
     boolean InsertReply(Reply reply);
     ArrayList<Reply> getAllReply();
     boolean deleteReplyById(int id);
+    boolean selectUsernameByReplyId(int id);
 }

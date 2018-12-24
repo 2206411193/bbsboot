@@ -34,5 +34,10 @@ public class ReplyService implements IReplyService {
         return replyMapper.deleteReply(id)==1;
     }
 
+    @Override
+    public boolean selectUsernameByReplyId(int id) {
+        return replyMapper.selectUsernameByReplyId(id)==1;
+    }
+
 
 }

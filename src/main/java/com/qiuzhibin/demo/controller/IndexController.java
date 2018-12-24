@@ -4,10 +4,11 @@ import com.qiuzhibin.demo.common.Dig;
 import com.qiuzhibin.demo.model.Article;
 import com.qiuzhibin.demo.model.Reply;
 import com.qiuzhibin.demo.model.User;
-import com.qiuzhibin.demo.model.vo.ArticleVo;
-import com.qiuzhibin.demo.model.vo.ReplyVo;
+
 import com.qiuzhibin.demo.service.ArticleService;
 import com.qiuzhibin.demo.service.ReplyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 
 @Controller
 public class IndexController {
-
+    private final Logger log = LoggerFactory.getLogger(IndexController.class);
 
 
 @Autowired
@@ -33,7 +34,8 @@ public class IndexController {
      //显示注册界面
      @RequestMapping(value = "/showRegister.do", method = RequestMethod.GET)
     public String register(HttpServletRequest request) {
-        return "index/register";
+
+         return "index/register";
     }
 
 
@@ -42,9 +44,11 @@ public class IndexController {
     public String showMainAfterLogin(HttpServletRequest request) {
 
        User user = (User)request.getSession().getAttribute("user");
-        if(user.getRole()<=10)
-            return "redirect:/commonUserMain.do";
+        if(user.getRole()<=10){
+            log.info(user.getUsername()+"普通用户登录！");
+            return "redirect:/commonUserMain.do";}
         else{
+            log.info(user.getUsername(),"vip用户登录。");
             return "redirect:/vipUserMain.do";
         }
     }
@@ -58,8 +62,7 @@ public class IndexController {
     //个人发表文章界面
     @RequestMapping(value = "/post.do", method = RequestMethod.GET)
     public String login(HttpServletRequest request, HttpServletResponse response) {
-//        Dig.digForword(response, "登陆成功!");
-
+         log.info("跳转到个人主页");
         request.getSession().setAttribute("title", "登入");
         return "index/post";
     }
@@ -79,6 +82,7 @@ public class IndexController {
     public String showBecomeVip(HttpServletRequest request)
     {
         User user = (User)request.getSession().getAttribute("user");
+        log.info(user.getUsername()+"进入充值界面");
         request.getSession().setAttribute("star",user.getRole());
         return "user/becomeVip";
     }
@@ -88,22 +92,24 @@ public class IndexController {
     public String moreActor(HttpServletRequest request) {
         return "moreActor";
     }
-
+    @RequestMapping(value = "/marvel.do", method = RequestMethod.GET)
+    public String marvel(HttpServletRequest request) {
+        return "marvel";
+    }
 
     @RequestMapping(value = "/Movie.do", method = RequestMethod.GET)
     public String Movie(HttpServletRequest request) {
 
         User user = (User)request.getSession().getAttribute("user");
         if(user==null) {
-            System.out.println("未登陆还想看电影？");
             return "Movie";
         }
        else if(user.getRole()<=10) {
-            System.out.println(user.getUsername()+"登陆,他的星级为"+user.getRole()+"不充钱的穷碧！");
+           log.info(user.getUsername()+"他的星级为"+user.getRole());
             return "user/Common/Movie-loginlatter";
         }
         else{
-            System.out.println(user.getUsername()+"登陆,他的星级为"+user.getRole()+"是我们亲爱的大会员！");
+            System.out.println(user.getUsername()+"他的星级为"+user.getRole()+"是我们亲爱的大会员！");
             return "user/vip/Movie-loginvip";
         }
 
@@ -116,8 +122,10 @@ public class IndexController {
          if(user!=null){
         ArrayList<Article> articles = articleService.getAllArticle();
         request.getSession().setAttribute("articles",articles);
+             log.info(user.getUsername()+"进入论坛");
         return "topic";}
-        Dig.digBack(response,"登陆后可以进入论坛,会员可以观看电影欧～");
+
+        Dig.digBack(response,"登陆后可以进入论坛,会员可以观看vip电影欧～");
          return "/showMain.do";
     }
 
@@ -131,7 +139,6 @@ public class IndexController {
     public String showArticleById(@PathVariable int id, HttpServletRequest request) {
 
         Article article = articleService.getArticleById(id);
-
        if(article!=null)
        replys = replyService.getReplyByArticleId(article.getId());
        if(replys!=null||replys.size()!=0){

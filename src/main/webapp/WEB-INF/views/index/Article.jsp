@@ -18,7 +18,12 @@
     <script type="text/javascript" src="/static/js/jquery-1.9.1.js"></script>
 </head>
 <style>
-body {margin:0;text-align:center}
+body {margin:0;text-align:center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("/static/img/img-1/22aeb57761540e77a76dc39c41a488389d3a4668.jpg");
+
+}
 
 .navbar {
 overflow: hidden;
@@ -59,35 +64,28 @@ height: 1500px; /* Used in this example to enable scrolling */
     <a href="#">查看作者</a>
     <a href="/Movie.do">影视观看</a>
 </div>
-<div class="article" style="margin-top: 200px">
-<h1 align="center">${article.title}</h1>
-        <div style="font: 18px 'Bitstream Charter';position:relative;horiz-align: center;  border-radius: 5px;border-color: black ;border-spacing: 10px">
-    <textarea  readonly style=" resize:none;" rows="20" cols="100" >
-        ${article.text}
-    </textarea>
-        </div>
-
+<div class="article" style="horiz-align: center;margin-top: 200px;">
+<h1 align="center" style="color:red;" >${article.title}</h1>
+    <textarea  disabled style="font-size: 18px;color: #2196F3;background:rgba(0, 0, 0, 0.15);resize:none;  border-radius:5px;" rows="17" cols="100" >${article.text}</textarea>
 </div>
 
-<div class="replys" style="text-align: center">
+<div class="replys" style="horiz-align: center;">
    <ul>
     <%
         ArrayList<Reply> replyList =(ArrayList)session.getAttribute("replys");
         if (replyList == null || replyList.size() == 0)
-            out.print("暂无评论,清开始妮的表演！");
+            out.print("暂无评论,赶快抢沙发吧！");
         else {
             for (int i = replyList.size() - 1; i >= 0; i--) {
                 Reply single =  replyList.get(i);
     %>
 
     <li>
-        <div class="blog-left">
-            <label>title:<%=single.getTitle()%></label><br>
+            <label style="color:red;">title:<%=single.getTitle()%></label><br>
             <label>people:<%=single.getUp()%></label><br>
                <label >time:<%=single.getCreate_time()%></label><br>
-            <textarea disabled form="reply" name="text" style="background-color:white;resize:none;  border-radius:5px;" rows="7" cols="100" ><%=single.getText()%></textarea>
+            <textarea disabled form="reply" name="text" style="    background:rgba(0, 0, 0, 0.15);    font-size: 18px;color: #2196F9;resize:none;  border-radius:5px;" rows="7" cols="100" ><%=single.getText()%></textarea>
 
-        </div>
 
     </li>
 
@@ -96,17 +94,13 @@ height: 1500px; /* Used in this example to enable scrolling */
         }
     %>
 <br><br>
-       <div style="margin-left:150px;text-align: center;height: 800px;width:1200px; overflow-y:-moz-scrollbars-vertical">
     <li>
-        <form id="reply" style="width: 100px" method="post" action="/user/reply/${article.getId()}">
-            <div>
-            <input name="title" style=" width: 100px; border: none; "placeholder="标题:"><br>
-            <textarea form="reply" name="text" style="text-align: center; resize:none; border-radius:5px;" rows="10" cols="100" placeholder="内容" ></textarea>
+        <form id="reply" method="post" action="/user/reply/${article.getId()}">
+            <input name="title" style=" width: 100px; border: none;  background:rgba(0, 0, 0, 0.15);"placeholder="标题:"><br>
+            <textarea form="reply" name="text" style="resize:none;background:rgba(0, 0, 0, 0.15);  border-radius:5px;" placeholder="内容" cols="100" rows="7" ></textarea>
                 <button type="submit" style="background-color: black;color: white; margin-right: 0px">评论</button>
-            </div>
         </form>
     </li>
-       </div>
     </ul>
 
 </div>

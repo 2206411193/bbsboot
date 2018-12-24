@@ -22,6 +22,9 @@
 <div class="navbar">
     <a href="/Movie.do" style="float: left;">Movie Appreciation</a>
     <a href="/topic.do" style="float: left">Hot topic</a>
+    <%--超链接位置改一改--%>
+    <a href="/marvel.do" style="float: left;">Marvel Studios</a>
+    <a href="/moreActor.do" style="float: left;">actors</a>
     <div class="dropdown">
      <a href="/showMainAfterLogin.do" style="float: right;">username:${sessionScope.get("user").getUsername()}</a>
         <a href="/user/logout.do" style="float: right;">登出</a>
@@ -107,7 +110,7 @@
 
 </div>
 <div class="more">
-    <a href="moreActor-loginlatter.html">>>>&nbsp;more&nbsp;</a>
+    <%--<a href="moreActor-loginlatter.html">>>>&nbsp;more&nbsp;</a>--%>
 </div>
 <div class="dianzi">
     <div class="first">Welcome to this place</div>

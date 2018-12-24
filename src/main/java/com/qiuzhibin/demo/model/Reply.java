@@ -1,5 +1,9 @@
 package com.qiuzhibin.demo.model;
 
+import com.qiuzhibin.demo.mapper.IUserMapper;
+import com.qiuzhibin.demo.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.sql.Timestamp;
 
 public class Reply {
@@ -10,26 +14,26 @@ public class Reply {
     String title;
     Timestamp create_time;
     String text;
-    String username;
+
     public int getId() {
         return id;
     }
 
-    public String getUsername() {
-        return username;
-    }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+
 
     public void setId(int id) {
         this.id = id;
     }
 
     public int getUp() {
+
         return up;
     }
+//    public String getUpName(int up){
+//        String username = userMapper.getUserById(up).getUsername();
+//        return username;
+//    }
 
     public void setUp(int up) {
         this.up = up;

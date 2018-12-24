@@ -28,7 +28,7 @@ public interface IUserMapper {
     @Update("Update user set role = #{star} where id = #{id}")
     Integer addStar(int star,int id);
     @Select("select * from user where id = #{id}")
-    User selectStar(int id);
+    User getUserById(int id);
     @Delete("delete from user  where id=#{id}")
     Integer deleteUser(int id);
 

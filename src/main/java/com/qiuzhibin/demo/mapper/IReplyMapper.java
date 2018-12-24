@@ -47,4 +47,7 @@ public interface IReplyMapper {
     @Delete("delete from reply where id=#{id}")
     Integer deleteArticle(int id);
 
+    @Select("Select username from user where  id in (select up from reply where up=#{up})")
+    Integer selectUsernameByReplyId(int id);
+
 }
